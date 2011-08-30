@@ -77,6 +77,7 @@ Copyright (C) 2007 Apple Inc. All Rights Reserved.
     NSString *xmlString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSString *result = [xmlString stringByReplacingOccurrencesOfString:@"<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">" withString:@""];
     result = [result stringByReplacingOccurrencesOfString:@"</string>" withString:@""];
+    result = [result stringByAppendingString:string];
     ret = [result copy];
     [xmlString release];
 
